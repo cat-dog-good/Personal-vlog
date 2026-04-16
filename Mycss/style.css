@@ -4,9 +4,8 @@
 
 .header {
     /* 为整个头部区域添加底部边框 */
-    border-bottom: 2px solid #e0e0e0;
     padding: 20px 0;
-    background-color: white; /* 可选：确保背景色 */
+    background-color: transparent; /* 可选：确保背景色 */
 }
 
 .header nav {
@@ -60,12 +59,13 @@
     border-color: #007bff; /* 悬停时显示边框 */
 }
 
-/* 当前页面链接高亮 */
+/* TODO 当前页面高亮*/
 .nav-links a[href*="index.html"] {
     background-color: #007bff;
     color: white;
     border: 1px solid #0056b3;
 }
+
 
 /* 响应式设计：小屏幕设备 */
 @media (max-width: 768px) {
@@ -79,4 +79,20 @@
         text-align: center;
         padding: 10px;
     }
+}
+
+/* 修复方案1：确保html和body元素充满整个视口 */
+html, body {
+    height: 100%;  /* 关键：确保高度为100% */
+    width: 100%;
+    margin: 0;     /* 移除默认外边距 */
+    padding: 0;    /* 移除默认内边距 */
+}
+
+body {
+    background-image: url('../image/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;  /* 固定背景 */
 }
